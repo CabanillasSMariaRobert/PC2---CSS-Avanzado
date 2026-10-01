@@ -1,0 +1,92 @@
+.alerts li {
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  color: white;
+}
+
+.alert-danger {
+  background-color: rgb(165.2, 112.8594059406, 0);
+}
+
+.alert-danger {
+  border: 5px solid rgb(53, 36.2079207921, 0);
+  animation: alerta 1s infinite;
+}
+@keyframes alerta {
+  0%, 100% {
+    border-color: rgb(53, 36.2079207921, 0);
+  }
+  50% {
+    border-color: #ffbf35;
+  }
+}
+
+.alert-warning {
+  background-color: rgb(200.9, 137.2485148515, 0);
+}
+
+.alert-success {
+  background-color: rgb(236.6, 161.6376237624, 0);
+}
+
+.alert-info {
+  background-color: rgb(255, 179.6891089109, 17.3);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  gap: 10px;
+}
+
+button {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgb(4, 6, 150);
+  color: #fff;
+}
+
+.card-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgb(255, 122.9523809524, 78);
+  color: #000000;
+  box-shadow: 6px 6px rgb(154.75, 154.75, 154.75);
+  font-size: 19px;
+}
+
+.card-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgb(255, 84.9047619048, 27);
+  color: #000000;
+  box-shadow: 10px 10px rgb(116.5, 116.5, 116.5);
+  font-size: 24px;
+}
+
+.card-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgb(231, 58.6666666667, 0);
+  color: #ffffff;
+  box-shadow: 14px 14px rgb(78.25, 78.25, 78.25);
+  font-size: 29px;
+}/*# sourceMappingURL=styles.css.map */

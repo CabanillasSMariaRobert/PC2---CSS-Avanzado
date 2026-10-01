@@ -1,0 +1,87 @@
+$color-alerta: #ffbf35;
+
+.alerts li{
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    color: white;
+}
+
+$tipos: info, success, warning, danger;
+
+@mixin generar-alerta($indice){
+    @if $indice > 0 {
+        .alert-#{nth($tipos, $indice)} {
+            background-color: darken($color-alerta, $indice * 7%);
+        }
+
+        @if #{nth($tipos, $indice)} == danger {
+            .alert-danger {
+                $color-borde: darken($color-alerta, 50%);
+                border: 5px solid $color-borde;
+                animation: alerta 1s infinite;
+                @keyframes alerta {
+                    0%, 100% {
+                        border-color: $color-borde;
+                    }
+
+                    50% {
+                        border-color: $color-alerta;
+                    }
+                }
+            }
+        }
+        @include generar-alerta($indice - 1);
+    }
+}
+
+@include generar-alerta(length($list: $tipos));
+
+$tamaño: 14px;
+$sombra: 2px;
+$color-tarjeta: #ffa181;
+
+.cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    gap: 10px;
+}
+
+button {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgb(4, 6, 150);
+    color: #fff;
+}
+
+@function color-texto($fondo){
+    @if (lightness($fondo) > 50%){
+        @return #000000;
+    } @else {
+        @return #ffffff;
+    }
+}
+
+@mixin generar-tarjeta(){
+    @for $i from 1 through 3 {
+        $fondo-tarjeta: darken($color-tarjeta, $i * 10);
+        .card-#{$i} {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: $fondo-tarjeta;
+            color: color-texto($fondo-tarjeta);
+            box-shadow: ($sombra + ($i * 4)) ($sombra + ($i * 4)) darken(#c1c1c1, $i * 15);
+            font-size: $tamaño + ($i * 5);
+        }
+
+    }
+}
+
+@include generar-tarjeta();
